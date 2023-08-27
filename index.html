@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        fontfamily: {
+          roboto: ['Roboto', 'sans-serif']
+        },
+        extend: {
+          colors: {
+            bg: 'hsl(235, 18%, 26%)',
+            primary: 'hsl(234, 29%, 20%)',
+            secondary: 'hsl(231, 7%, 60%)',
+            white: 'hsl(0, 0%, 100%)',
+            tomatto: 'hsl(4, 100%, 67%)',
+          }
+        }
+      }
+    }
+  </script>
+  <script defer src="script.js"></script>
+</head>
+<body class="font-roboto bg-bg">
+
+  <!-- Sign-up form start -->
+  <section id="signUp" class="lg:min-h-screen lg:flex lg:items-center lg:justify-center">
+    <div
+      class="flex min-h-screen bg-white flex-col lg:items-center lg:flex-row-reverse lg:p-5 lg:rounded-2xl lg:min-h-0">
+      <div>
+        <img class="w-full lg:hidden" src="assets/images/illustration-sign-up-mobile.svg" alt="">
+        <img class="w-full hidden lg:block" src="assets/images/illustration-sign-up-desktop.svg" alt="">
+      </div>
+      <div class="text-primary py-5 px-6">
+        <h1 class="text-5xl font-bold  mb-5">Stay updated!</h1>
+        <p class="mb-5 font-semibold">Join 60,000+ product managers receiving monthly updates on:</p>
+        <ul class="px-7 list-image-[url(assets/images/icon-list.svg)] space-y-2 font-semibold mb-5">
+          <li>Product discovery and building what matters</li>
+          <li>Measuring to ensure updates are a success</li>
+          <li>And much more!</li>
+        </ul>
+        <form id="myForm" class="font-semibold">
+          <div class="flex items-center justify-between">
+            <label for="email">Email address</label>
+            <label for="error" id="textError" class="text-tomatto "></label>
+          </div>
+          <input class="w-full mt-2 border pl-4 font-normal h-14 rounded-xl " type="text" name="email" id="myEmail"
+            placeholder="email@company.com">
+          <input
+            class="w-full mt-5 h-14 text-white rounded-xl cursor-pointer bg-gradient-to-r from-primary to-primary transition duration-300 hover:bg-gradient-to-r hover:from-pink-600  hover:to-tomatto hover:shadow-xl"
+            type="submit" value="Subscribe to monthly newsletter">
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- Sign-up form end -->
+
+  <!-- Success message start -->
+  <section id="successMessage" class="flex min-h-screen justify-center items-center hidden  ">
+    <div
+      class="flex items-start flex-col justify-between px-5 py-10 min-h-screen bg-white lg:min-h-fit lg:py-16 lg:px-10 lg:rounded-2xl lg:shadow-xl lg:max-w-md ">
+      <div></div>
+      <div class="lg:mb-10">
+        <img src="assets/images/icon-success.svg" alt="icon-success">
+        <h1 class="mt-5 text-5xl font-bold text-primary">Thanks for subscribing!</h1>
+        <p class="mt-5">
+          A confirmation email has been sent to <span class="font-bold text-primary">ash@loremcompany.com.</span>
+          Please open it and click the button inside to confirm your subscription.
+        </p>
+      </div>
+      <button
+        class="w-full h-14 bg-primary text-white font-bold rounded-xl bg-gradient-to-r from-primary to-primary transition duration-300 hover:bg-gradient-to-r hover:from-pink-600  hover:to-tomatto hover:shadow-xl">Dismiss
+        message</button>
+    </div>
+  </section>
+  <!-- Success message end -->
+</body>
+
+</html>
